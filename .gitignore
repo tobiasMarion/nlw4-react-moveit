@@ -34,4 +34,4 @@ yarn-error.log*
 .vercel
 
 # to-do
-./notes.md
+notes.md

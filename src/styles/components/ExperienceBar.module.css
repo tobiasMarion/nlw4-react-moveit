@@ -20,6 +20,7 @@
     height: 4px;
     border-radius: 4px;
     background: var(--green);
+    transition: .4s;
 }
 
 span.currentExperience {
@@ -27,4 +28,5 @@ span.currentExperience {
     top: 12px;
     transform: translateX(-50%);
     white-space: nowrap;
+    transition: .4s;
 }
