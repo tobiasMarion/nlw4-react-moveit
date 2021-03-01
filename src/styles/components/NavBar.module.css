@@ -1,0 +1,65 @@
+.NavBarContainer {
+  width: 7rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--white);
+  padding-bottom: 5rem;
+}
+
+.NavBarContainer > a {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.NavBarContainer nav {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.NavBarContainer nav ul {
+  width: 100%;
+}
+
+.NavBarContainer nav ul li {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  transition: .4s;
+}
+
+.NavBarContainer nav ul li svg {
+  width: 2rem;
+  stroke: var(--text);
+  opacity: 0.5;
+}
+
+.NavBarContainer nav ul li.active::after {
+  content: '';
+  width: 5px;
+  border-radius: 0 5px 5px 0;
+  position: absolute;
+  background: var(--blue);
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.NavBarContainer nav ul li.active a svg{
+  stroke: var(--blue);
+  opacity: 1;
+}

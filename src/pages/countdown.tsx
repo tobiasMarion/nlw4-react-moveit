@@ -1,17 +1,18 @@
 import Head from "next/head";
 import { GetServerSideProps } from "next/";
 
+import React from "react";
 import styles from "../styles/pages/home.module.css";
 
 import { CountdownProvider } from "../contexts/CountdownContext";
+import { ChallengesProvider } from "../contexts/ChallengesContext";
 
 import { ExperienceBar } from "../components/ExperienceBar";
 import { Profile } from "../components/Profile";
 import { CompletedChallenges } from "../components/CompletedChallenges";
 import { Countdown } from "../components/Countdown";
 import { ChallengeBox } from "../components/ChallengeBox";
-import React from "react";
-import { ChallengesProvider } from "../contexts/ChallengesContext";
+import { NavBar } from "../components/NavBar";
 
 interface HomeProps {
   level: number;
@@ -28,8 +29,10 @@ export default function Home(props: HomeProps) {
     >
       <div className={styles.container}>
         <Head>
-          <title>Início | moveit</title>
+          <title>Contador | moveit</title>
         </Head>
+
+        <NavBar page={0} />
 
         <ExperienceBar />
 
