@@ -33,6 +33,7 @@
 body {
     background: var(--background);
     color: var(--text);
+    position: relative;
 }
 
 body, input, textarea, button {
@@ -46,4 +47,8 @@ button {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+ul {
+    list-style: none;
 }

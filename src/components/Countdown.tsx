@@ -10,6 +10,7 @@ export function Countdown() {
     isActive,
     startCountdown,
     resetCountdown,
+    timePercent
   } = useContext(CountdownContext);
 
   const [minutesLeft, minutesRight] = String(minutes)
@@ -45,6 +46,8 @@ export function Countdown() {
               onClick={resetCountdown}
             >
               Abandonar ciclo
+              <img src="/icons/close.svg" alt="Encerrar ciclo"/>
+              <span className={styles.timePercent} style={{width: `${timePercent}%`}}></span>
             </button>
           ) : (
             <button className={styles.countdownButton} onClick={startCountdown}>

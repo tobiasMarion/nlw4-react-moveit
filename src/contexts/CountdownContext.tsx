@@ -14,6 +14,7 @@ interface CountdownContextData {
   isActive: boolean;
   startCountdown: () => void;
   resetCountdown: () => void;
+  timePercent: number;
 }
 
 interface CountdownProviderProps {
@@ -33,6 +34,8 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
 
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
+
+  const timePercent = ((25 * 60 - time) * 100) / (25 * 60)
 
   function startCountdown() {
     setIsActive(true);
@@ -56,6 +59,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
       startNewChallenge()
     }
   }, [isActive, time]);
+  
   return (
     <CountdownContext.Provider
       value={{
@@ -65,6 +69,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
         isActive,
         startCountdown,
         resetCountdown,
+        timePercent
       }}
     >
       {children}

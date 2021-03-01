@@ -3,12 +3,14 @@
     background: var(--white);
     border-radius: 5px;
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
-    padding: 1.5rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    max-width: 410px;
+    margin: 0 auto;
+    padding: 3rem 0;
 }
 
 .challengeNotActive {
@@ -21,12 +23,12 @@
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.4;
+    margin: 2rem;
 }
 
 .challengeNotActive p {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     line-height: 1.4;
     max-width: 70%;
@@ -36,6 +38,11 @@
 .challengeNotActive p img{
     margin-bottom: 1rem;
     width: 20%;
+}
+
+.challengeNotActive p span {
+    text-align: left;
+    margin-left: 1.5rem;
 }
 
 
@@ -51,6 +58,7 @@
     font-size: 1.25rem;
     padding: 0 2rem 1.5rem;
     border-bottom: 1px solid var(--gray-line);
+    margin: 1.5rem 2rem 0;
 }
 
 .challengeActive main {
@@ -59,6 +67,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0 2rem;
 }
 
 .challengeActive main strong {
@@ -73,32 +82,40 @@
 }
 
 .challengeActive footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    display: flex;
+    height: 5rem;
 }
 
 .challengeActive footer button{
-    height: 3rem;
+    height: 100%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 0;
-    border-radius: 5px;
-    color: var(--white);
     font-size: 1rem;
     font-weight: 600;
-    transition: 0.2s;
+    transition: 0.4s;
+    border-top: 1px solid var(--gray-line);
 }
 
 .challengeActive footer button.challengeFailedButton {
-    background: var(--red)
+    background: #FFF5F5;
+    color: var(--red);
+    border-right: 1px solid var(--gray-line);
+}
+
+.challengeActive footer button.challengeFailedButton:hover {
+    background: var(--red);
+    color: var(--white);
 }
 
 .challengeActive footer button.challengeSuccedButton {
-    background: var(--green)
+    background: #F7FFF5;
+    color: var(--green);
 }
 
-.challengeActive footer button:hover {
-    filter: brightness(.9);
+.challengeActive footer button.challengeSuccedButton:hover {
+    background: var(--green);
+    color: var(--white);
 }
