@@ -2,7 +2,7 @@ import Head from "next/head";
 import { GetServerSideProps } from "next/";
 
 import React from "react";
-import styles from "../styles/pages/home.module.css";
+import styles from "../styles/pages/Countdown.module.css";
 
 import { CountdownProvider } from "../contexts/CountdownContext";
 import { ChallengesProvider } from "../contexts/ChallengesContext";
@@ -10,17 +10,17 @@ import { ChallengesProvider } from "../contexts/ChallengesContext";
 import { ExperienceBar } from "../components/ExperienceBar";
 import { Profile } from "../components/Profile";
 import { CompletedChallenges } from "../components/CompletedChallenges";
-import { Countdown } from "../components/Countdown";
+import { CountdownComponent } from "../components/Countdown";
 import { ChallengeBox } from "../components/ChallengeBox";
 import { NavBar } from "../components/NavBar";
 
-interface HomeProps {
+interface CountdownProps {
   level: number;
   currentExperience: number;
   challengesCompleted: number;
 }
 
-export default function Home(props: HomeProps) {
+export default function Countdown(props: CountdownProps) {
   return (
     <ChallengesProvider
       level={props.level}
@@ -41,7 +41,7 @@ export default function Home(props: HomeProps) {
             <div>
               <Profile />
               <CompletedChallenges />
-              <Countdown />
+              <CountdownComponent />
             </div>
             <div>
               <ChallengeBox />

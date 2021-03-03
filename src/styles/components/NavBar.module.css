@@ -39,7 +39,7 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .NavBarContainer nav ul li svg {
@@ -49,7 +49,7 @@
 }
 
 .NavBarContainer nav ul li.active::after {
-  content: '';
+  content: "";
   width: 5px;
   border-radius: 0 5px 5px 0;
   position: absolute;
@@ -59,7 +59,43 @@
   bottom: 0;
 }
 
-.NavBarContainer nav ul li.active a svg{
+.NavBarContainer nav ul li.active a svg {
   stroke: var(--blue);
   opacity: 1;
+}
+
+@media (max-width: 750px) {
+  .NavBarContainer {
+    position: absolute;
+    width: 100%;
+    height: 5rem;
+    top: 0;
+    left: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white);
+    padding: 0.5rem 1rem;
+  }
+
+  .NavBarContainer > a {
+    width: min-content;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .NavBarContainer nav {
+    flex-grow: 0;
+    width: min-content;
+  }
+
+  .NavBarContainer nav ul {
+    display: flex;
+  }
+
+  .NavBarContainer nav ul li.active::after {
+    width: 0;
+  }
 }
